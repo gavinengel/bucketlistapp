@@ -73,16 +73,36 @@
           "detailExtraFields": [],
           "addScreenExtraFields": [],
           "editScreenExtraFields": [],
-          "components": [],
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "location",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Location",
+                  "inputType": "location",
+                  "titlePosition": "left",
+                  "dataBinding": "Location",
+                  "locationDisplayType": "map",
+                  "locationApiKey": "pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A"
+                }
+              ],
+              "name": "editableListForm6",
+              "formType": "add"
+            }
+          ],
           "name": "masterDetailViewModel",
           "dataProvider": "bucketlist",
           "collection": "Activities",
           "headerField": "Text",
           "addItemForm": true,
-          "addScreenHeaderValue": "Create",
+          "addScreenHeaderValue": "Add Activity",
           "editItemForm": true,
           "editScreenHeaderSource": "static",
-          "editScreenHeaderValue": "Edit",
+          "editScreenHeaderValue": "Edit Activity",
           "deleteItemButton": true,
           "deleteItemConfirmation": true,
           "pullToRefresh": false,
@@ -91,7 +111,7 @@
           "serverSideSorting": false,
           "serverSidePaging": false,
           "detailHeaderFieldSource": "static",
-          "detailHeaderFieldValue": "Detail"
+          "detailHeaderFieldValue": "Activity Detail"
         }
       ],
       "title": "Activities",

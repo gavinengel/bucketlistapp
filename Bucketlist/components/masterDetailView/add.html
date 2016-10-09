@@ -1,11 +1,38 @@
 <div data-role="view" data-title="Add" data-model="app.masterDetailView.addItemViewModel" data-bind="events: { show: onShow }" id="masterDetailViewModelAddScreen" class="screen screen--add add-item-view">
     <header data-role="header">
         <div data-role="navbar" class="header-text">
-            <span>Create</span>
+            <span>Add Activity</span>
             <a data-role="backbutton" data-align="left" data-bind="events: { click: onCancel }">Cancel</a>
             <a data-role="button" data-align="right" data-bind="events: { click: onSaveClick }">Save</a>
         </div>
     </header>
     <!-- START_CUSTOM_CODE_masterDetailViewModel -->
     <!-- END_CUSTOM_CODE_masterDetailViewModel -->
+    <div id="editableListForm6" class="form-view screen__content screen__content--form">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+
+                    <div id="locationField" class="field field--location imageListItem">
+
+                        <div class="field__label">Location</div>
+
+                        <div class="field__content">
+
+                            <div id="location" class="mapView"></div>
+
+                            <div>
+                                <a id="location-link" href="javascript:void(0)" data-bind="events {click: editLocation}">Edit</a> /
+                                <a id="location-link" href="javascript:void(0)" data-bind="events {click: useCurrentLocation}">Use current</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm6 -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+        <!-- END_CUSTOM_CODE_editableListForm6 -->
+    </div>
 </div>

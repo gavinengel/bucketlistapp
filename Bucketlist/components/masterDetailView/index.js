@@ -12,7 +12,123 @@ app.masterDetailView = kendo.observable({
 (function(parent) {
     var dataProvider = app.data.bucketlist,
         /// start global model properties
+
+        markerLayers = {},
+        getLocation = function(options) {
+            var d = new $.Deferred();
+            if (options === undefined) {
+                options = {
+                    enableHighAccuracy: true
+                };
+            }
+            navigator.geolocation.getCurrentPosition(
+                function(position) {
+                    d.resolve(position);
+                },
+                function(error) {
+                    d.reject(error);
+                },
+                options);
+            return d.promise();
+        },
+
+        setupMap = function(container, dataModel, markersLayer) {
+            var markersLayerContainer = container + 'markersLayer';
+            if (masterDetailViewModel[container]) {
+                masterDetailViewModel[container].remove();
+                masterDetailViewModel[container] = null;
+            }
+            masterDetailViewModel[container] = L.map(container);
+            masterDetailViewModel[markersLayerContainer] = new L.FeatureGroup();
+            var tileLayer = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+                attribution: 'Imagery from <a href="http://mapbox.com/about/maps/">MapBox</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                id: 'mapbox.streets',
+                accessToken: "pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A"
+            });
+            masterDetailViewModel[container].addLayer(tileLayer);
+            masterDetailViewModel[container].addLayer(masterDetailViewModel[markersLayerContainer]);
+            masterDetailViewModel[container].on('click', function(e) {
+                masterDetailViewModel.set("itemDetailsVisible", false);
+            });
+            addMarkers(container, dataModel, markersLayer);
+        },
+        addMarkers = function(container, data, markersLayer) {
+            var markersLayerContainer = container + 'markersLayer';
+            getLocation()
+                .then(function(userPosition) {
+                    var marker,
+                        currentMarker, currentMarkerIcon,
+                        latLang,
+                        mapBounds,
+                        userLatLang = L.latLng(userPosition.coords.latitude, userPosition.coords.longitude);
+                    masterDetailViewModel[container].setView(userLatLang, 15, {
+                        animate: false
+                    });
+                    mapBounds = masterDetailViewModel[container].getBounds();
+                    masterDetailViewModel[markersLayerContainer].clearLayers();
+                    if (!markersLayer) {
+                        if (data) {
+                            if (data.hasOwnProperty('latitude') && data.hasOwnProperty('longitude')) {
+                                latLang = [data.latitude, data.longitude];
+                            } else if (data.hasOwnProperty('Latitude') && data.hasOwnProperty('Longitude')) {
+                                latLang = [data.Latitude, data.Longitude];
+                            }
+                            if (latLang && latLang[0] !== undefined && latLang[1] !== undefined) {
+                                marker = L.marker(latLang, {
+                                    clickable: false
+                                });
+                                masterDetailViewModel[markersLayerContainer + 'Marker'] = latLang;
+                                mapBounds.extend(latLang);
+                                masterDetailViewModel[markersLayerContainer].addLayer(marker);
+                            }
+                        } else { //When no data => add form
+                            marker = L.marker(userLatLang, {
+                                draggable: false
+                            });
+                            masterDetailViewModel[markersLayerContainer].addLayer(marker);
+                            masterDetailViewModel[markersLayerContainer + 'Marker'] = [userLatLang.lat, userLatLang.lng];
+                        }
+                    } else {
+                        if (!masterDetailViewModel[markersLayer + 'markersLayerMarker']) {
+                            masterDetailViewModel[markersLayer + 'markersLayerMarker'] = userLatLang;
+                        }
+                        marker = L.marker(masterDetailViewModel[markersLayer + 'markersLayerMarker'], {
+                            draggable: true,
+                        });
+                        marker.on('dragend', function(e) {
+                            var selectedPosition = e.target.getLatLng();
+                            setupMap(markersLayer, {
+                                longitude: selectedPosition.lng,
+                                latitude: selectedPosition.lat
+                            });
+                        });
+                        masterDetailViewModel[markersLayerContainer].addLayer(marker);
+                    }
+                    currentMarkerIcon = L.divIcon({
+                        className: 'current-marker',
+                        iconSize: [20, 20],
+                        iconAnchor: [20, 20]
+                    });
+                    currentMarker = L.marker(userLatLang, {
+                        icon: currentMarkerIcon
+                    });
+                    masterDetailViewModel[markersLayerContainer].addLayer(currentMarker);
+                    masterDetailViewModel.set("mapVisble", true);
+                    masterDetailViewModel[container].invalidateSize({
+                        reset: true
+                    });
+                    masterDetailViewModel[container].fitBounds(mapBounds, {
+                        padding: [20, 20]
+                    });
+                    app.mobileApp.pane.loader.hide();
+                })
+                .then(null, function(error) {
+                    app.mobileApp.pane.loader.hide();
+                    alert("code: " + error.code + "message: " + error.message);
+                });
+        },
         /// end global model properties
+
         fetchFilteredData = function(paramFilter, searchFilter) {
             var model = parent.get('masterDetailViewModel'),
                 dataSource;
@@ -90,7 +206,6 @@ app.masterDetailView = kendo.observable({
                     var dataItem = data[i];
 
                     /// start flattenLocation property
-                    flattenLocationProperties(dataItem);
                     /// end flattenLocation property
 
                 }
@@ -268,14 +383,42 @@ app.masterDetailView = kendo.observable({
         /// start add model properties
         /// end add model properties
         /// start add model functions
+
+        editLocation: function(field) {
+            field = field.target.id.split('-')[0];
+            $("#locationEditor").show();
+            setupMap('locationEditMap', null, field);
+        },
+        useCurrentLocation: function(field) {
+
+            field = field.target.id.split('-')[0];
+            var addFormData = this.get('addFormData');
+            getLocation()
+                .then(function(userPosition) {
+                    addFormData[field].set('latitude', userPosition.coords.latitude);
+                    addFormData[field].set('longitude', userPosition.coords.longitude);
+                    setupMap(field, userPosition.coords);
+                });
+
+        },
         /// end add model functions
+
         onShow: function(e) {
             this.set('addFormData', {
                 /// start add form data init
+
+                location: {
+                    longitude: '',
+                    latitude: ''
+                },
                 /// end add form data init
+
             });
             /// start add form show
+
+            setupMap('location');
             /// end add form show
+
         },
         onCancel: function() {
             /// start add model cancel
@@ -289,7 +432,12 @@ app.masterDetailView = kendo.observable({
 
             function saveModel(data) {
                 /// start add form data save
-                /// end add form data save
+
+                addModel.Location = {
+                        latitude: masterDetailViewModel['locationmarkersLayerMarker'][0],
+                        longitude: masterDetailViewModel['locationmarkersLayerMarker'][1]
+                    }
+                    /// end add form data save
 
                 dataSource.add(addModel);
                 dataSource.one('change', function(e) {
