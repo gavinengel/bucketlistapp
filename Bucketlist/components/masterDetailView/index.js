@@ -405,6 +405,8 @@ app.masterDetailView = kendo.observable({
 
         onShow: function(e) {
             this.set('addFormData', {
+                end: '',
+                start: '',
                 /// start add form data init
 
                 location: {
@@ -432,6 +434,8 @@ app.masterDetailView = kendo.observable({
 
             function saveModel(data) {
                 /// start add form data save
+                addModel.End = addFormData.end;
+                addModel.Start = addFormData.start;
 
                 addModel.Location = {
                         latitude: masterDetailViewModel['locationmarkersLayerMarker'][0],

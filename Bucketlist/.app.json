@@ -88,6 +88,28 @@
                   "dataBinding": "Location",
                   "locationDisplayType": "map",
                   "locationApiKey": "pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "start",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Date",
+                  "inputType": "date",
+                  "titlePosition": "left",
+                  "inputDateType": "datetime-local",
+                  "dataBinding": "Start"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "end",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Date",
+                  "inputType": "date",
+                  "titlePosition": "left",
+                  "inputDateType": "datetime-local",
+                  "dataBinding": "End"
                 }
               ],
               "name": "editableListForm6",
