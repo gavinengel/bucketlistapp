@@ -45,7 +45,7 @@
 
 var isEngelcloud = (window.location.href.indexOf('engelcloud.com') == -1) ? false : true; 
 if (isEngelcloud && window.location.protocol != "https:") {
-  alert('redirect to: '+"https:" + window.location.href.substring(window.location.protocol.length));
+  ///alert('redirect to: '+"https:" + window.location.href.substring(window.location.protocol.length));
   window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 
 }
