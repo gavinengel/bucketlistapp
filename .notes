@@ -1,1 +1,4 @@
 aws s3 sync --delete ./Bucketlist/ s3://bucketlistapp --exclude=.*;
+
+Endpoint: bucketlistapp.s3-website-us-east-1.amazonaws.com
+
