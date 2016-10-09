@@ -432,6 +432,11 @@ Fields
     border-radius: 3px;
 }
 
+#kendoUiMobileApp .km-modalview-root .k-animation-container {
+    height: 100% !important;
+    width: 100% !important;
+}
+
 #kendoUiMobileApp .km-modalview-wrapper {
     position: fixed !important;
     top: 10%;
