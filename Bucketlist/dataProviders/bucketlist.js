@@ -44,7 +44,7 @@
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 var scheme = (navigator.platform.indexOf('Win32') == -1) ? 'http' : 'https';
 if (scheme != 'https') {
-    app.data.bucketlist.setup.scheme = scheme;
+    //app.data.bucketlist.setup.scheme = scheme;
     //console.log('modified protocol for: ' + navigator.platform);
 }
 // END_CUSTOM_CODE_bucketlist
