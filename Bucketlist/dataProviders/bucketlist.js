@@ -42,9 +42,10 @@
 
 // START_CUSTOM_CODE_bucketlist
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-var scheme = (navigator.platform.indexOf('Linux x86_64') == -1) ? 'https' : 'http';
+///var scheme = (navigator.platform.indexOf('Linux x86_64') == -1) ? 'https' : 'http';
+var scheme = (window.location.href.indexOf('localhost') == -1) ? 'https' : 'http';
 if (scheme != 'https') {
     app.data.bucketlist.setup.scheme = scheme;
-    console.log('modified protocol for: ' + navigator.platform);
+    console.log('modified protocol for: ' + navigator.platform+'  '+window.location.href);
 }
 // END_CUSTOM_CODE_bucketlist
