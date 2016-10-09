@@ -42,6 +42,18 @@
 
 // START_CUSTOM_CODE_bucketlist
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
+
+var isEngelcloud = (window.location.href.indexOf('engelcloud.com') == -1) ? false : true; 
+if (isEngelcloud && window.location.protocol != "https:") {
+  alert('redirect to: '+"https:" + window.location.href.substring(window.location.protocol.length));
+  window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+
+}
+else {
+  ///alert('dont redirect https');
+}
+
+
 ///var scheme = (navigator.platform.indexOf('Linux x86_64') == -1) ? 'https' : 'http';
 var scheme = (window.location.href.indexOf('localhost') == -1 && window.location.href.indexOf('amazonaws.com') == -1) ? 'https' : 'http';
 if (scheme != 'https') {
