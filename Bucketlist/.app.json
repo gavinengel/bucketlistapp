@@ -79,12 +79,24 @@
               "components": [
                 {
                   "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textField",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Description",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "inputTextType": "text",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Text"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
                   "name": "location",
                   "dataBindingRelationChildren": "[]",
                   "dataBindingMultipleSelectChildren": "[]",
                   "title": "Location",
                   "inputType": "location",
-                  "titlePosition": "left",
+                  "titlePosition": "top",
                   "dataBinding": "Location",
                   "locationDisplayType": "map",
                   "locationApiKey": "pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A"
