@@ -126,6 +126,100 @@
               ],
               "name": "editableListForm6",
               "formType": "add"
+            },
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "location1",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Location",
+                  "inputType": "location",
+                  "titlePosition": "top",
+                  "dataBinding": "Location",
+                  "locationDisplayType": "map",
+                  "locationApiKey": "pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textBlock",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Start Date",
+                  "inputType": "textBlock",
+                  "wideFieldTitlePosition": "top",
+                  "dataBindingOptional": "Start",
+                  "format": "d"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textBlock1",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "End Date",
+                  "inputType": "textBlock",
+                  "wideFieldTitlePosition": "top",
+                  "dataBindingOptional": "End",
+                  "format": "d"
+                }
+              ],
+              "name": "editableListForm17",
+              "formType": "detail"
+            },
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textField1",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Description",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "inputTextType": "text",
+                  "placeholder": "Type here ...",
+                  "dataBinding": "Text"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "date",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Start Date",
+                  "inputType": "date",
+                  "titlePosition": "left",
+                  "inputDateType": "date",
+                  "dataBinding": "Start"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "date1",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "End Date",
+                  "inputType": "date",
+                  "titlePosition": "left",
+                  "inputDateType": "date",
+                  "dataBinding": "End"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "location2",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Location",
+                  "inputType": "location",
+                  "titlePosition": "top",
+                  "dataBinding": "Location",
+                  "locationDisplayType": "map",
+                  "locationApiKey": "pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A"
+                }
+              ],
+              "name": "editableListForm24",
+              "formType": "edit"
             }
           ],
           "name": "masterDetailViewModel",
@@ -145,7 +239,8 @@
           "serverSideSorting": false,
           "serverSidePaging": false,
           "detailHeaderFieldSource": "static",
-          "detailHeaderFieldValue": "Activity Detail"
+          "detailHeaderFieldValue": "Activity Detail",
+          "detailSubHeaderField": "End"
         }
       ],
       "title": "Activities",

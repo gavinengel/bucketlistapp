@@ -11,8 +11,52 @@
     <div class="details-content screen__content screen__content--details">
         <div class="km-listview-wrapper">
             <ul class="km-listview km-list km-listinset details-fields">
+                <li>
+                    <h3 data-bind="text: currentItem.End"></h3></li>
 
 
+                <li class="form-content-item">
+
+
+                    <div id="location1Field" class="field field--location imageListItem km-label-above">
+
+                        <div class="field__label">Location</div>
+
+                        <div class="field__content">
+
+                            <div id="location1" class="mapView"></div>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="detail-content-item">
+
+
+                    <label id="textBlockField" class="km-label-above field field--text-block">
+
+                        <span class="field__label">Start Date</span>
+
+
+                        <div class="textBlock field__content" data-bind="text: currentItem.Start" data-format="d"></div>
+
+                    </label>
+
+
+                </li>
+                <li class="detail-content-item">
+
+
+                    <label id="textBlock1Field" class="km-label-above field field--text-block">
+
+                        <span class="field__label">End Date</span>
+
+
+                        <div class="textBlock field__content" data-bind="text: currentItem.End" data-format="d"></div>
+
+                    </label>
+
+
+                </li>
             </ul>
         </div>
     </div>

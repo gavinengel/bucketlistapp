@@ -8,4 +8,64 @@
     </header>
     <!-- START_CUSTOM_CODE_masterDetailViewModel -->
     <!-- END_CUSTOM_CODE_masterDetailViewModel -->
+    <div id="editableListForm24" class="form-view screen__content screen__content--form">
+        <form>
+            <ul class="form-content" data-role="listview" data-style="inset">
+                <li class="form-content-item">
+
+
+                    <label id="textField1Field" class="field field--text">
+                        <span class="field__label">Description</span>
+
+
+                        <input id="textField1" data-bind="value: editFormData.textField1" placeholder="Type here ..." type="text">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="dateField" class="field field--date">
+                        <span class="field__label">Start Date</span>
+
+
+                        <input id="date" data-bind="value: editFormData.date" type="date">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <label id="date1Field" class="field field--date">
+                        <span class="field__label">End Date</span>
+
+
+                        <input id="date1" data-bind="value: editFormData.date1" type="date">
+
+                    </label>
+                </li>
+                <li class="form-content-item">
+
+
+                    <div id="location2Field" class="field field--location imageListItem km-label-above">
+
+                        <div class="field__label">Location</div>
+
+                        <div class="field__content">
+
+                            <div id="location2" class="mapView"></div>
+
+                            <div>
+                                <a id="location2-link" href="javascript:void(0)" data-bind="events {click: editLocation}">Edit</a> /
+                                <a id="location2-link" href="javascript:void(0)" data-bind="events {click: useCurrentLocation}">Use current</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <!-- START_CUSTOM_CODE_editableListForm24 -->
+        <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+        <!-- END_CUSTOM_CODE_editableListForm24 -->
+    </div>
 </div>

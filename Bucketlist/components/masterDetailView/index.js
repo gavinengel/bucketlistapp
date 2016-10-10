@@ -340,7 +340,11 @@ app.masterDetailView = kendo.observable({
                 masterDetailViewModel.setCurrentItemByUid(uid);
 
                 /// start detail form show
+
+                setupMap('location1', itemModel.Location);
+
                 /// end detail form show
+
             },
             setCurrentItemByUid: function(uid) {
                 var item = uid,
@@ -466,7 +470,24 @@ app.masterDetailView = kendo.observable({
         /// start edit model properties
         /// end edit model properties
         /// start edit model functions
+
+        editLocation: function(field) {
+            field = field.target.id.split('-')[0];
+            $("#locationEditor").show();
+            setupMap('locationEditMap', null, field);
+        },
+        useCurrentLocation: function(field) {
+            field = field.target.id.split('-')[0];
+            var editFormData = this.get('editFormData');
+            getLocation()
+                .then(function(userPosition) {
+                    editFormData[field].set('latitude', userPosition.coords.latitude);
+                    editFormData[field].set('longitude', userPosition.coords.longitude);
+                    setupMap(field, userPosition.coords);
+                });
+        },
         /// end edit model functions
+
         editFormData: {},
         onShow: function(e) {
             var that = this,
@@ -477,11 +498,24 @@ app.masterDetailView = kendo.observable({
 
             this.set('itemData', itemData);
             this.set('editFormData', {
+                date1: itemData.End,
+                date: itemData.Start,
+                textField1: itemData.Text,
                 /// start edit form data init
+
+                location2: {
+                    longitude: itemData.Location.longitude,
+                    latitude: itemData.Location.latitude
+                },
                 /// end edit form data init
+
             });
             /// start edit form show
+
+            setupMap('location2', itemData.Location);
+
             /// end edit form show
+
         },
         linkBind: function(linkString) {
             var linkChunks = linkString.split(':');
@@ -494,7 +528,14 @@ app.masterDetailView = kendo.observable({
                 dataSource = masterDetailViewModel.get('dataSource');
 
             /// edit properties
+            itemData.set('End', editFormData.date1);
+            itemData.set('Start', editFormData.date);
+            itemData.set('Text', editFormData.textField1);
             /// start edit form data save
+
+            editFormData.location2.latitude = masterDetailViewModel['location2markersLayerMarker'][0];
+            editFormData.location2.longitude = masterDetailViewModel['location2markersLayerMarker'][1];
+            itemData.set('Location', editFormData.location2);
             /// end edit form data save
 
             function editModel(data) {
