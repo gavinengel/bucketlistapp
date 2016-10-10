@@ -1,19 +1,35 @@
+  
   $("#kendoUiMobileApp").kendoTouch({
       enableSwipe: true,
       //touchstart: function(e) { console.log("touch start"); },
       swipe: function(e) { 
-        //console.log("swipe " + e.direction); 
-        //console.log("current view:");
-        if (app.mobileApp.view().id == 'components/mapView/view.html') {
-          if (e.direction == 'right') {
-            console.log('right!')
-            // components/aboutView/view.html 
-            // _kendoApp.navigate(location);
-            // router.navigate("/items/books/59?user=John");
-            app.mobileApp.navigate("#components/profileView/view.html");
+        /* [ map ] [ calendar ] [ agenda ] */
+        var newView = '';
 
+        if (app.mobileApp.view().id == 'components/mapView/view.html') {
+          if (e.direction == 'left') {
+            newView = 'calendar';
           }
         }
+        else if (app.mobileApp.view().id == 'components/calendarView/view.html') {
+          if (e.direction == 'right') {
+            newView = 'map';
+          }
+          else if (e.direction == 'left') {
+            newView = 'agenda';
+          }
+        }
+        else if (app.mobileApp.view().id == 'components/agendaView/view.html') {
+          if (e.direction == 'right') {
+            newView = 'calendar';
+          }
+        }
+
+        if (newView) {
+          console.log('navigate to: '+newView);
+          app.mobileApp.navigate("#components/" + newView + "View/view.html");
+        }
+
       }//,
       //tap: function(e) { console.log("tap"); },
       //doubletap: function(e) { console.log("double tap"); },
