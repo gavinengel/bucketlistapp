@@ -50,14 +50,16 @@
       "name": "agendaView",
       "components": [],
       "title": "Agenda View",
-      "addToNavigation": false
+      "addToNavigation": true,
+      "icon": "home"
     },
     {
       "type": "kendo-ui-mobile:view",
       "name": "calendarView",
       "components": [],
       "title": "Calendar View",
-      "addToNavigation": false
+      "addToNavigation": true,
+      "icon": "home"
     },
     {
       "type": "kendo-ui-mobile:view",
