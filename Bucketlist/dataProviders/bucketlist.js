@@ -43,21 +43,23 @@
 // START_CUSTOM_CODE_bucketlist
 // Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
 
-var isEngelcloud = (window.location.href.indexOf('engelcloud.com') == -1) ? false : true; 
+var isEngelcloud = (window.location.href.indexOf('engelcloud.com') > 0 && window.location.href.indexOf('amazonaws.com') < 0) ? true : false; 
 if (isEngelcloud && window.location.protocol != "https:") {
-  ///alert('redirect to: '+"https:" + window.location.href.substring(window.location.protocol.length));
-  window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+  console.log('redirect to: '+"https:" + window.location.href.substring(window.location.protocol.length));
+  //window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
 
 }
 else {
-  ///alert('dont redirect https');
+  console.log('dont redirect https');
 }
 
-
+/*
 ///var scheme = (navigator.platform.indexOf('Linux x86_64') == -1) ? 'https' : 'http';
 var scheme = (window.location.href.indexOf('localhost') == -1 && window.location.href.indexOf('amazonaws.com') == -1 && window.location.href.indexOf('engelcloud.com') == -1) ? 'https' : 'http';
+console.log('using scheme for everlive: '+scheme);
 if (scheme != 'https') {
     app.data.bucketlist.setup.scheme = scheme;
     console.log('modified protocol for: ' + navigator.platform+'  '+window.location.href);
 }
+*/
 // END_CUSTOM_CODE_bucketlist
