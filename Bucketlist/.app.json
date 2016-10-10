@@ -245,6 +245,86 @@
       "title": "Activities",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "profileView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [
+            {
+              "type": "kendo-ui-mobile:editableListForm",
+              "components": [
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textField2",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Text field",
+                  "inputType": "text",
+                  "titlePosition": "left",
+                  "inputTextType": "text",
+                  "placeholder": "Type here ..."
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "dropdownlist",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Label",
+                  "inputType": "dropdownlist",
+                  "titlePosition": "left"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "radio",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Label",
+                  "inputType": "radio",
+                  "group": "group1"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "heading",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Heading",
+                  "inputType": "heading",
+                  "headingSize": "h1"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "textBlock2",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "Text Block",
+                  "inputType": "textBlock",
+                  "wideFieldTitlePosition": "top"
+                },
+                {
+                  "type": "kendo-ui-mobile:editableListFormField",
+                  "name": "group",
+                  "dataBindingRelationChildren": "[]",
+                  "dataBindingMultipleSelectChildren": "[]",
+                  "title": "My group",
+                  "inputType": "group-separator"
+                }
+              ],
+              "name": "editableListForm25",
+              "formType": "add"
+            }
+          ],
+          "name": "profileViewModel",
+          "enableDataBinding": false,
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Profile",
+      "addToNavigation": true,
+      "icon": "contacts"
     }
   ],
   "dataProviders": [
