@@ -33,58 +33,8 @@
       "type": "kendo-ui-mobile:view",
       "name": "home",
       "components": [],
-      "title": "Add Activity",
-      "addToNavigation": true,
-      "icon": "add"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "mapView",
-      "components": [],
-      "title": "Map View",
-      "addToNavigation": true,
-      "icon": "mostviewed"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "agendaView",
-      "components": [],
-      "title": "Agenda View",
-      "addToNavigation": true,
-      "icon": "home"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "calendarView",
-      "components": [],
-      "title": "Calendar View",
-      "addToNavigation": true,
-      "icon": "home"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "aboutView",
-      "components": [
-        {
-          "type": "kendo-ui-mobile:about",
-          "name": "aboutViewModel",
-          "appName": "My App",
-          "appVersion": "Version 1",
-          "appDescription": "App description",
-          "contactButton": true,
-          "contactLabel": "Contact us",
-          "contactMail": "support@example.com",
-          "facebookButton": true,
-          "facebookLabel": "Like us on Facebook",
-          "facebookLink": "https://www.facebook.com/Telerik",
-          "twitterButton": true,
-          "twitterLabel": "Follow us on Twitter",
-          "twitterLink": "https://twitter.com/telerik"
-        }
-      ],
-      "title": "About",
-      "addToNavigation": true,
-      "icon": "info"
+      "title": "Home",
+      "addToNavigation": false
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -266,9 +216,58 @@
           "detailSubHeaderField": "End"
         }
       ],
-      "title": "Activities",
+      "title": "My Activities",
       "addToNavigation": true,
       "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "mapView",
+      "components": [],
+      "title": "Map View",
+      "addToNavigation": true,
+      "icon": "mostviewed"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "agendaView",
+      "components": [],
+      "title": "Agenda View",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "calendarView",
+      "components": [],
+      "title": "Calendar View",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "aboutView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:about",
+          "name": "aboutViewModel",
+          "appName": "My App",
+          "appVersion": "Version 1",
+          "appDescription": "App description",
+          "contactButton": true,
+          "contactLabel": "Contact us",
+          "contactMail": "support@example.com",
+          "facebookButton": true,
+          "facebookLabel": "Like us on Facebook",
+          "facebookLink": "https://www.facebook.com/Telerik",
+          "twitterButton": true,
+          "twitterLabel": "Follow us on Twitter",
+          "twitterLink": "https://twitter.com/telerik"
+        }
+      ],
+      "title": "About",
+      "addToNavigation": true,
+      "icon": "info"
     },
     {
       "type": "kendo-ui-mobile:view",
