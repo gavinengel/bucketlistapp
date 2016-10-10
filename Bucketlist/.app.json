@@ -33,9 +33,9 @@
       "type": "kendo-ui-mobile:view",
       "name": "home",
       "components": [],
-      "title": "Home View",
+      "title": "Add Activity",
       "addToNavigation": true,
-      "icon": "home"
+      "icon": "add"
     },
     {
       "type": "kendo-ui-mobile:view",
