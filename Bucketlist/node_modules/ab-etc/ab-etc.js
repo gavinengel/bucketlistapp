@@ -1,4 +1,4 @@
-if (!abEtc) abEtc = {}
+if (typeof abEtc === 'undefined') abEtc = {}
 
 abEtc.insertHtml = function(source, destination) {
   var newHtml = jQuery( source ).html();
