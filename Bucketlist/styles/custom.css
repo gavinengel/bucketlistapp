@@ -1,3 +1,4 @@
-body .foo {
-  border: 1px solid red;
+body #mapViewScreen .km-content {
+  background-image: url(/images/FullSizeRender.jpg);
+  background-size: cover;
 }
