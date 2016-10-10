@@ -39,6 +39,14 @@
     },
     {
       "type": "kendo-ui-mobile:view",
+      "name": "mapView",
+      "components": [],
+      "title": "Map View",
+      "addToNavigation": true,
+      "icon": "mostviewed"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
       "name": "aboutView",
       "components": [
         {
