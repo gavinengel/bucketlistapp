@@ -1,12 +1,20 @@
-body #mapViewScreen .km-content {
-  background-image: url(/images/FullSizeRender.jpg);
-  background-size: cover;
-}
-body #calendarViewScreen .km-content {
-  background-image: url(/images/calendarMockup.jpg);
-  background-size: 100%;
-}
-body #agendaViewScreen .km-content {
-  background-image: url(/images/agendaMockup.png);
-  background-size: 100%;
-}
+/*body {
+  #mapViewScreen {
+    .km-content {
+      background-image: url(/images/FullSizeRender.jpg);
+      background-size: cover;
+    }
+  }
+  #calendarViewScreen {
+    .km-content {
+      background-image: url(/images/calendarMockup.jpg);
+      background-size: 100%;
+    }
+  }
+  #agendaViewScreen {
+    .km-content {
+      background-image: url(/images/agendaMockup.png);
+      background-size: 100%;
+    }
+  }
+}*/
