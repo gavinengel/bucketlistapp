@@ -23,7 +23,7 @@
           "emailLabel": "Email",
           "passwordLabel": "Password",
           "signinLabel": "Sign In",
-          "signinRedirect": "home"
+          "signinRedirect": "masterDetailView"
         }
       ],
       "title": "Bucketlistr Login",
@@ -266,8 +266,7 @@
         }
       ],
       "title": "About",
-      "addToNavigation": true,
-      "icon": "info"
+      "addToNavigation": false
     },
     {
       "type": "kendo-ui-mobile:view",

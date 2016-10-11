@@ -13,7 +13,7 @@ app.authenticationView = kendo.observable({
     var provider = app.data.bucketlist,
         mode = 'signin',
         registerRedirect = 'home',
-        signinRedirect = 'home',
+        signinRedirect = 'masterDetailView',
         rememberKey = 'bucketlist_authData_authenticationViewModel',
         init = function(error, result) {
             $('.status').text('');
