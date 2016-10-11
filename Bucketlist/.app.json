@@ -362,7 +362,7 @@
   ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
-  "view": "home",
+  "view": "masterDetailView",
   "transition": "slide",
   "showMoreTab": true,
   "skin": "nova",
