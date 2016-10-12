@@ -12,7 +12,7 @@ app.authenticationView = kendo.observable({
 (function(parent) {
     var provider = app.data.bucketlist,
         mode = 'signin',
-        registerRedirect = 'home',
+        registerRedirect = 'welcomeView',
         signinRedirect = 'masterDetailView',
         rememberKey = 'bucketlist_authData_authenticationViewModel',
         init = function(error, result) {

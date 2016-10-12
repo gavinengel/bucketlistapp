@@ -15,7 +15,7 @@
           "registerPasswordLabel": "Password",
           "registerNameLabel": "Name",
           "registerLabel": "Register",
-          "registerRedirect": "home",
+          "registerRedirect": "welcomeView",
           "gotoSigninLabel": "Sign In",
           "enableLogout": false,
           "enableRememberme": true,
@@ -347,6 +347,13 @@
       "title": "Profile",
       "addToNavigation": true,
       "icon": "contacts"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "welcomeView",
+      "components": [],
+      "title": "Welcome!",
+      "addToNavigation": false
     }
   ],
   "dataProviders": [
