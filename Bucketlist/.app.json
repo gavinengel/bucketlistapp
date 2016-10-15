@@ -216,7 +216,7 @@
           "detailSubHeaderField": "End"
         }
       ],
-      "title": "My Activities",
+      "title": "My Groupings",
       "addToNavigation": true,
       "icon": "organize"
     },
@@ -227,22 +227,6 @@
       "title": "Map View",
       "addToNavigation": true,
       "icon": "mostviewed"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "agendaView",
-      "components": [],
-      "title": "Agenda View",
-      "addToNavigation": true,
-      "icon": "home"
-    },
-    {
-      "type": "kendo-ui-mobile:view",
-      "name": "calendarView",
-      "components": [],
-      "title": "Calendar View",
-      "addToNavigation": true,
-      "icon": "home"
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -350,10 +334,34 @@
     },
     {
       "type": "kendo-ui-mobile:view",
+      "name": "calendarView",
+      "components": [],
+      "title": "Calendar View",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "agendaView",
+      "components": [],
+      "title": "Agenda View",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
       "name": "welcomeView",
       "components": [],
       "title": "Welcome!",
       "addToNavigation": false
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "groupingView",
+      "components": [],
+      "title": "Grouping",
+      "addToNavigation": true,
+      "icon": "home"
     }
   ],
   "dataProviders": [

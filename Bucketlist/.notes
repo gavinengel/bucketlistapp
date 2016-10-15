@@ -1,0 +1,21 @@
+| made static page
+ | link to this page
+  | link away from this page
+   | in menu
+--------------------------------------------------------------
+x  x login: Login screen / Register
+x  x welcome: Hi there
+x  x groupings: All Groupings
+x  x grouping: Single Grouping, show dates to select
+    timing: Show time coordination for a single grouping day
+    map: Show the main map
+    agenda: List grouped by person (or topic?)
+    calendar: Calendar
+    friends: All yo friends
+    addfriend: Add people
+    profile: Your profile or a friend profile
+    settings: All that fun stuff
+
+
+nav:
+[ groupings ][ map ][ friends ][ profile ]
