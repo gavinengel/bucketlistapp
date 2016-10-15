@@ -21,12 +21,15 @@
 </head>
 
 <body id="kendoUiMobileApp">
+    <script src="components/settingsView/index.js"></script>
+    <script src="components/timingView/index.js"></script>
     <script src="components/groupingView/index.js"></script>
     <script src="components/welcomeView/index.js"></script>
     <script src="components/agendaView/index.js"></script>
     <script src="components/calendarView/index.js"></script>
     <script src="components/profileView/index.js"></script>
     <script src="components/aboutView/index.js"></script>
+    <script src="components/friendsView/index.js"></script>
     <script src="components/mapView/index.js"></script>
     <script src="components/masterDetailView/index.js"></script>
     <script src="components/home/index.js"></script>
@@ -41,13 +44,17 @@
             <div data-role="tabstrip" id="navigation-container">
                 <a href="components/masterDetailView/view.html" data-icon="organize">My Groupings</a>
                 <a href="components/mapView/view.html" data-icon="mostviewed">Map View</a>
+                <a href="components/friendsView/view.html" data-icon="organize">Friends</a>
                 <a href="components/profileView/view.html" data-icon="contacts">Profile</a>
-                <a href="components/calendarView/view.html" data-icon="home">Calendar View</a>
 
 
-                <a href="#navigation-show-more-view" data-more="true" data-icon="more">More</a></div>
+                <a href="#navigation-show-more-view" data-more="true" data-icon="more">More</a>
+
+
+            </div>
             <div id="navigation-container-more" style="display: none">
-                <a href="components/agendaView/view.html" data-icon="home">Agenda View</a><a href="components/groupingView/view.html" data-icon="home">Grouping</a></div>
+                <a href="components/calendarView/view.html" data-icon="home">Calendar View</a><a href="components/agendaView/view.html" data-icon="home">Agenda View</a><a href="components/groupingView/view.html" data-icon="home">Grouping</a><a href="components/timingView/view.html"
+                data-icon="home">Timing</a><a href="components/settingsView/view.html" data-icon="bookmarks">Settings</a></div>
         </footer>
     </div>
 

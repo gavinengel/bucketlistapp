@@ -230,6 +230,43 @@
     },
     {
       "type": "kendo-ui-mobile:view",
+      "name": "friendsView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:editableList",
+          "listExtraFields": [],
+          "detailExtraFields": [],
+          "addScreenExtraFields": [],
+          "editScreenExtraFields": [],
+          "components": [],
+          "name": "friendsViewModel",
+          "dataProvider": "bucketlist",
+          "collection": "Friends",
+          "headerField": "FriendId",
+          "iconField": false,
+          "addItemForm": true,
+          "addScreenHeaderValue": "Create",
+          "editItemForm": true,
+          "editScreenHeaderSource": "static",
+          "editScreenHeaderValue": "Edit",
+          "deleteItemButton": true,
+          "deleteItemConfirmation": true,
+          "pullToRefresh": true,
+          "endlessScroll": false,
+          "isMapView": false,
+          "serverSideSorting": false,
+          "serverSidePaging": false,
+          "detailHeaderFieldSource": "static",
+          "detailHeaderFieldValue": "Detail",
+          "detailSubHeaderField": "FriendId"
+        }
+      ],
+      "title": "Friends",
+      "addToNavigation": true,
+      "icon": "organize"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
       "name": "aboutView",
       "components": [
         {
@@ -362,6 +399,31 @@
       "title": "Grouping",
       "addToNavigation": true,
       "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "timingView",
+      "components": [],
+      "title": "Timing",
+      "addToNavigation": true,
+      "icon": "home"
+    },
+    {
+      "type": "kendo-ui-mobile:view",
+      "name": "settingsView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:form",
+          "components": [],
+          "name": "settingsViewModel",
+          "enableDataBinding": false,
+          "submitButton": "Confirm",
+          "cancelButton": "Cancel"
+        }
+      ],
+      "title": "Settings",
+      "addToNavigation": true,
+      "icon": "bookmarks"
     }
   ],
   "dataProviders": [

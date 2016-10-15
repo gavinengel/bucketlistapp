@@ -7,14 +7,14 @@ x  x login: Login screen / Register
 x  x welcome: Hi there
 x  x groupings: All Groupings
 x  x grouping: Single Grouping, show dates to select
-    timing: Show time coordination for a single grouping day
-    map: Show the main map
-    agenda: List grouped by person (or topic?)
-    calendar: Calendar
-    friends: All yo friends
-    addfriend: Add people
-    profile: Your profile or a friend profile
-    settings: All that fun stuff
+x  x timing: Show time coordination for a single grouping day
+x  x map: Show the main map
+x  x agenda: List grouped by person (or topic?)
+x  x calendar: Calendar
+x  x friends: All yo friends
+x  x addfriend: Add people
+x  x profile: Your profile or a friend profile
+x  x settings: All that fun stuff
 
 
 nav:
