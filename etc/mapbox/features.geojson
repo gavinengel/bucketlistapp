@@ -1,0 +1,62 @@
+﻿{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "marker-iud1lit52",
+        "title": "saaaaaaaaaa",
+        "description": "safdsd asdf asdf a",
+        "marker-size": "large",
+        "marker-color": "#f86767",
+        "marker-symbol": "rocket"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.123514,
+          42.381372
+        ],
+        "type": "Point"
+      },
+      "id": "3890068dedbc99c5eb6e015f661a30e7"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "marker-iud1kslb1",
+        "title": "lskdflasldf';alksd",
+        "description": "asdfsdfasdfasfd",
+        "marker-size": "small",
+        "marker-color": "#fa946e",
+        "marker-symbol": "rocket"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.128234,
+          42.382323
+        ],
+        "type": "Point"
+      },
+      "id": "7cc00feae1e491f0b43bd75ae9be06b2"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "marker-iud1ide50",
+        "title": "woop there it is",
+        "description": "asdfasdflkjasdfl al;skdj fl;kas jdflk sdf",
+        "marker-size": "small",
+        "marker-color": "#fa946e",
+        "marker-symbol": "rocket"
+      },
+      "geometry": {
+        "coordinates": [
+          -71.123085,
+          42.37687
+        ],
+        "type": "Point"
+      },
+      "id": "9c068e9ba7ba4969e7dadba38a3c1dc5"
+    }
+  ],
+  "type": "FeatureCollection"
+}
