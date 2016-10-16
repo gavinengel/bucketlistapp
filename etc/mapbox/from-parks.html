@@ -16,18 +16,121 @@
 
 		<div id='map'></div>
 		<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuc3dpY2siLCJhIjoieUZiWmwtVSJ9.0cPQywdbPVmvHiHJ6NwdXA';
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2F2aW5lbmdlbCIsImEiOiJjaXUzNWw0bDQwaGkxMnVqd21la3lhbG9jIn0.a1ezjDK34ARm1IWYi7l71A';
 var map = new mapboxgl.Map({
 	    container: 'map',
-	        style: 'mapbox://styles/mapbox/streets-v8',
-		    center: [-95.24027322474723, 38.95159220654659],
-		        zoom: 11
+	        style: 'mapbox://styles/gavinengel/ciucx2o4m004g2jmok58cl5d3',
+	        zoom: 11,
+			    center: [-71.10185575484788, 42.375370390743456]
 });
 
 map.on('style.load', function () {
 	    map.addSource("markers", {
 		            "type": "geojson",
-			            "data": parks
+			            "data": 
+			            	{"type":"FeatureCollection","features":[
+			            		{"type":"Feature","properties":{"name":"south park"},"geometry":{"type":"Point","coordinates":[-95.2358865737915,38.96194491354418]}},
+			            		{"type":"Feature","properties":{"name":"Buford M Watson, Jr. Park"},"geometry":{"type":"Point","coordinates":[-95.23893356323242,38.97148792405487]}},
+			            		{"type":"Feature","properties":{"name":"Centennial Park"},"geometry":{"type":"Point","coordinates":[-95.26292324066162,38.969919755358]}},{"type":"Feature","properties":{"name":"Naismith Valley Park"},"geometry":{"type":"Point","coordinates":[-95.25189399719238,38.93564493366085]}},
+			            		{"type":"Feature","properties":{"name":"Prairie Park"},"geometry":{"type":"Point","coordinates":[-95.21472930908203,38.93190607345723]}},{"type":"Feature","properties":{"name":"Holcom Park"},"geometry":{"type":"Point","coordinates":[-95.26777267456055,38.93698019310818]}},
+			            		{"type":"Feature","properties":{"name":"Dad Perry Park"},"geometry":{"type":"Point","coordinates":[-95.28579711914062,38.962345345418036]}},
+			            		{"type":"Feature","properties":{"name":"Lawrence Nature Park"},"geometry":{"type":"Point","coordinates":[-95.3034782409668,38.988368562404126]}},
+			            		{"type":"Feature","properties":{"name":"Clinton State Park"},"geometry":{"type":"Point","coordinates":[-95.36819458007811,38.93604551413491]}},
+			            		{"type":"Feature","properties":{"name":"Woodridge Primitive Park"},"geometry":{"type":"Point","coordinates":[-95.4269027709961,38.93257374152105]}},
+			            		{"type":"Feature","properties":{"name":"Bloomington Public Use Area"},"geometry":{"type":"Point","coordinates":[-95.38321495056152,38.914444322537314]}},
+										  {
+										    type: 'Feature',
+										    geometry: {
+										      type: 'Point',
+										      coordinates: [-77.031952, 38.913184]
+										    },
+										    properties: {
+										    	name: 'wdccccccccccccccc',
+										      title: 'Mapbox DC',
+										      description: '1714 14th St NW, Washington DC',
+										      'marker-color': '#3ca0d3',
+										      'marker-size': 'large',
+										      'marker-symbol': 'rocket'
+										    }
+										  },
+										  {
+										    type: 'Feature',
+										    geometry: {
+										      type: 'Point',
+										      coordinates: [-122.413682, 37.775408]
+										    },
+										    properties: {
+										    	name: 'sfffffffffffffff',
+										      title: 'Mapbox SF',
+										      description: '155 9th St, San Francisco',
+										      'marker-color': '#63b6e5',
+										      'marker-size': 'large',
+										      'marker-symbol': 'rocket'
+										    }
+										  },
+									      {
+										      "type": "Feature",
+										      "properties": {
+										      	name: 'asdfasdfasdf',
+										        "id": "marker-iud1lit52",
+										        "title": "saaaaaaaaaa",
+										        "description": "safdsd asdf asdf a",
+										        "marker-size": "large",
+										        "marker-color": "#f86767",
+										        "marker-symbol": "rocket"
+										      },
+										      "geometry": {
+										        "coordinates": [
+										          -71.123514,
+										          42.381372
+										        ],
+										        "type": "Point"
+										      },
+										      "id": "3890068dedbc99c5eb6e015f661a30e7"
+										    },
+										    {
+										      "type": "Feature",
+										      "properties": {
+										      	name: 'abbbbbbbbbbbb',
+										        "id": "marker-iud1kslb1",
+										        "title": "lskdflasldf';alksd",
+										        "description": "asdfsdfasdfasfd",
+										        "marker-size": "small",
+										        "marker-color": "#fa946e",
+										        "marker-symbol": "rocket"
+										      },
+										      "geometry": {
+										        "coordinates": [
+										          -71.128234,
+										          42.382323
+										        ],
+										        "type": "Point"
+										      },
+										      "id": "7cc00feae1e491f0b43bd75ae9be06b2"
+										    },
+										    {
+										      "type": "Feature",
+										      "properties": {
+										      	name: 'cccccccccc',
+										        "id": "marker-iud1ide50",
+										        "title": "woop there it is",
+										        "description": "asdfasdflkjasdfl al;skdj fl;kas jdflk sdf",
+										        "marker-size": "small",
+										        "marker-color": "#fa946e",
+										        "marker-symbol": "rocket"
+										      },
+										      "geometry": {
+										        "coordinates": [
+										          -71.123085,
+										          42.37687
+										        ],
+										        "type": "Point"
+										      },
+										      "id": "9c068e9ba7ba4969e7dadba38a3c1dc5"
+										    }
+
+
+			            		]}
 					        });
 
 	        map.addLayer({
